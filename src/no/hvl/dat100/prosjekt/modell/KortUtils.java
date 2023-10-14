@@ -20,20 +20,20 @@ public class KortUtils {
 		Kort[] hentsamling = samling.getSamling();
 		int hentant = samling.getAntalKort();
 		KortSamling sotert = new KortSamling();
-		
-		for (int i=0; i<hentant;i++) {
+
+		for (int i = 0; i < hentant; i++) {
 			int minstpos = 0;
-			for(int j=1;j<hentant;j++) {
-				if(hentsamling[i].compareTo(hentsamling[j])>0 /*&&j<hentant-1*/) {
+			for (int j = 1; j < hentant; j++) {
+				if (hentsamling[i].compareTo(hentsamling[j]) > 0 /* &&j<hentant-1 */) {
 					minstpos = j;
 				}
 				sotert.leggTil(hentsamling[minstpos]);
 //				System.out.println(hentsamling[minstpos].toString());
-				
+
 			}
 
 		}
-		samling =sotert;
+		samling = sotert;
 
 		// TODO - END
 	}
@@ -44,33 +44,35 @@ public class KortUtils {
 	 * @param samling samling av kort som skal stokkes.
 	 */
 	public static void stokk(KortSamling samling) {
- //Kanskje med bruk av random og sjekke om posisjonen har noe objekt i en ny bunke
-//		int[] plasser = new int[samling.getAntalKort()];
-//		for(int i=0; i<samling.getAntalKort();i++) {
-//			plasser[i]=i;
-//		}
-//		for (Kort k:samling.getSamling()) {
-//			int rand = (int)Math.random()*(plasser.length-1);
-//			while() {
-//				
-//			}
-//		}
-//	}	
+		// Kanskje med bruk av random og sjekke om posisjonen har noe objekt i en ny
+		// bunke
 		KortSamling stokk = new KortSamling();
-		for(int i=0; i<samling.getAntalKort();i++) {
-		int plassering = 0; /*(int) (Math.random()*(samling.getAntalKort()-1));*/
-		
-			while(stokk.getSamling()[plassering]!=null) {
-				plassering =(int) (Math.random()*(samling.getAntalKort()-1));
+		Random rand = new Random();
+//		int hentantall = samling.getAntalKort();
+		for (int i = 0; i < samling.getAntalKort(); i++) {
+			int randomplass = rand.nextInt(samling.getAntalKort() - 1);
+			while(stokk.getSamling()[i]==samling.getSamling()[randomplass]) {
+				randomplass = rand.nextInt(samling.getAntalKort() - 1);
 			}
-			stokk.getSamling()[plassering]=samling.getSamling()[i];
-
 			
+			stokk.leggTil(samling.getSamling()[randomplass]);
 		}
-		samling =stokk;
+		samling = stokk;
 
-			// TODO - END
+//		KortSamling stokk = new KortSamling();
+//		for(int i=0; i<samling.getAntalKort();i++) {
+//		int plassering = 0; /*(int) (Math.random()*(samling.getAntalKort()-1));*/
+//		
+//			while(stokk.getSamling()[plassering]!=null) {
+//				plassering =(int) (Math.random()*(samling.getAntalKort()-1));
+//			}
+//			stokk.getSamling()[plassering]=samling.getSamling()[i];
+//
+//			
+//		}
+//		samling =stokk;
+//
+//			// TODO - END
+//	}
 	}
 }
-
-

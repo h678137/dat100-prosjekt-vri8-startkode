@@ -176,6 +176,7 @@ public class Bord {
 		while(getBunkeTil().getAntalKort()!=0) {
 			getBunkeFra().leggTil(getBunkeTil().taSiste());
 		}
+		;
 		//legger tilbake øverste kort i den tomme til bunken
 		getBunkeTil().leggTil(overst);
 		
