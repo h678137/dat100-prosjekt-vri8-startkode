@@ -29,8 +29,8 @@ public class Spill {
 	public Spill() {
 		
 		// TODO - START
+		nord = new ISpiller();
 		
-		throw new UnsupportedOperationException(TODO.constructor("Spill"));
 		// TODO - END
 		
 	}

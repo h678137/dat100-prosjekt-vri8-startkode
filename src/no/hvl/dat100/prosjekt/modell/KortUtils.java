@@ -11,30 +11,44 @@ public class KortUtils {
 	 * 
 	 * @see Kort
 	 * 
-	 * @param samling
-	 * 			samling av kort som skal sorteres. 
+	 * @param samling samling av kort som skal sorteres.
 	 */
-	
+
 	public static void sorter(KortSamling samling) {
-		
+
 		// TODO - START
+		Kort[] hentsamling = samling.getSamling();
+		int hentant = samling.getAntalKort();
+		KortSamling sotert = new KortSamling();
 		
-		throw new UnsupportedOperationException(TODO.method());
+		for (int i=0; i<hentant;i++) {
+			int minstpos = 0;
+			for(int j=1;j<hentant;j++) {
+				if(hentsamling[i].compareTo(hentsamling[j])>0 /*&&j<hentant-1*/) {
+					minstpos = j;
+				}
+				sotert.leggTil(hentsamling[minstpos]);
+				System.out.println(hentsamling[minstpos].toString());
+				
+			}
+
+		}
+		samling =sotert;
+
 		// TODO - END
 	}
-	
+
 	/**
-	 * Stokkar en kortsamling. 
+	 * Stokkar en kortsamling.
 	 * 
-	 * @param samling
-	 * 			samling av kort som skal stokkes. 
+	 * @param samling samling av kort som skal stokkes.
 	 */
 	public static void stokk(KortSamling samling) {
-		
+ //Kanskje med bruk av random og sjekke om posisjonen har noe objekt i en ny bunke
 		// TODO - START
-		
+
 		throw new UnsupportedOperationException(TODO.method());
 		// TODO - END
 	}
-	
+
 }
