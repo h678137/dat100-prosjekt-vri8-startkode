@@ -99,10 +99,7 @@ public abstract class Spiller implements ISpiller {
 	public boolean erFerdig() {
 		
 		//må sjekke etter en viss handling??
-		boolean ferdig = false;
-		
-		throw new UnsupportedOperationException(TODO.method());
-		
+		return hand.erTom();
 	}
 
 	public void leggTilKort(Kort kort) {
@@ -129,8 +126,9 @@ public abstract class Spiller implements ISpiller {
 	public void trekker(Kort kort) {
 		
 		// TODO - START
+		hand.leggTil(kort);
+		antalltrekk++;
 		
-		throw new UnsupportedOperationException(TODO.method());
 		// TODO - END
 		
 	}

@@ -165,20 +165,21 @@ public class Bord {
 	 */	
 	public void snuTilBunken() {
 		
-		//ta vare på øverste til kort
-		Kort overst = seOversteBunkeTil();
-		
-		
-//		//fjerner øverste kortet fra til bunken
-		getBunkeTil().fjern(overst);
-		
-		//må stokke kortet  til -> fra
-		while(getBunkeTil().getAntalKort()!=0) {
-			getBunkeFra().leggTil(getBunkeTil().taSiste());
+		if(bunkeTil.getAntalKort()<=1) {
+			throw new IllegalArgumentException(" du kan ikke gjøre om bunken");
 		}
-		;
+		//ta vare på øverste til kort og fjerner fra bunketiil
+		Kort overst = bunkeTil.taSiste();
+		
+				
+		//må stokke kortet  til -> fra
+		while(bunkeTil.getAntalKort()!=0) {
+			bunkeFra.leggTil(bunkeTil.taSiste());
+		}
+		
+		
 		//legger tilbake øverste kort i den tomme til bunken
-		getBunkeTil().leggTil(overst);
+		bunkeTil.leggTil(overst);
 		
 	
 
