@@ -28,7 +28,7 @@ public class KortUtils {
 					minstpos = j;
 				}
 				sotert.leggTil(hentsamling[minstpos]);
-				System.out.println(hentsamling[minstpos].toString());
+//				System.out.println(hentsamling[minstpos].toString());
 				
 			}
 
@@ -45,10 +45,21 @@ public class KortUtils {
 	 */
 	public static void stokk(KortSamling samling) {
  //Kanskje med bruk av random og sjekke om posisjonen har noe objekt i en ny bunke
-		// TODO - START
+		
+		KortSamling stokk = new KortSamling();
+		for(int i=0; i<samling.getAntalKort();i++) {
+		int plassering = (int) (Math.random()*(samling.getAntalKort()-1));
+		
+			while(stokk.getSamling()[plassering]!=null) {
+				plassering =(int) (Math.random()*(samling.getAntalKort()-1));
+			}
+			stokk.getSamling()[plassering]=samling.getSamling()[i];
 
-		throw new UnsupportedOperationException(TODO.method());
-		// TODO - END
+			
+		}
+		samling =stokk;
+
+			// TODO - END
 	}
 
 }
