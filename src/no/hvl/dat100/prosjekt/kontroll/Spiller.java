@@ -60,7 +60,7 @@ public abstract class Spiller implements ISpiller {
 		
 		// TODO - START
 		
-		return this.getAntallKort();
+		return hand.getAntalKort();
 		// TODO - END
 	}
 
