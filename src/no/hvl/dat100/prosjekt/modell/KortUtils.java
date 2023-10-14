@@ -45,10 +45,20 @@ public class KortUtils {
 	 */
 	public static void stokk(KortSamling samling) {
  //Kanskje med bruk av random og sjekke om posisjonen har noe objekt i en ny bunke
-		
+//		int[] plasser = new int[samling.getAntalKort()];
+//		for(int i=0; i<samling.getAntalKort();i++) {
+//			plasser[i]=i;
+//		}
+//		for (Kort k:samling.getSamling()) {
+//			int rand = (int)Math.random()*(plasser.length-1);
+//			while() {
+//				
+//			}
+//		}
+//	}	
 		KortSamling stokk = new KortSamling();
 		for(int i=0; i<samling.getAntalKort();i++) {
-		int plassering = (int) (Math.random()*(samling.getAntalKort()-1));
+		int plassering = 0; /*(int) (Math.random()*(samling.getAntalKort()-1));*/
 		
 			while(stokk.getSamling()[plassering]!=null) {
 				plassering =(int) (Math.random()*(samling.getAntalKort()-1));
@@ -61,5 +71,6 @@ public class KortUtils {
 
 			// TODO - END
 	}
-
 }
+
+
