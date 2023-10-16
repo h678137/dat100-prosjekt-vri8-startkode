@@ -167,7 +167,7 @@ public class KortSamling {
 		int j = 0;
 
 		while (j < antall && !harkort) {
-			if (samling[j].equals(kort)) {
+			if (/*samling[j].equals(kort) &&*/ samling!=null && kort!=null && samling[j].getFarge() == kort.getFarge() && samling[j].getVerdi() == kort.getVerdi() ) {
 				harkort = true;
 			}
 			j++;
@@ -210,6 +210,8 @@ public class KortSamling {
 			if (samling[i] == kort) {
 
 				if (i < antall - 1) {
+					
+					//kanskje det kødder til her med blidet på kort?
 					samling[i] = samling[i + 1];
 				} else {
 					samling[i] = null;
