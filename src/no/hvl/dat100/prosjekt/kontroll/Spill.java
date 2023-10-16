@@ -158,9 +158,7 @@ public class Spill {
 	public Handling nesteHandling(ISpiller spiller) {
 		
 		// TODO - START
-		
-//		return spiller.nesteHandling(null);
-		
+		return spiller.nesteHandling(bord.seOversteBunkeTil());		
 //		return spiller.
 		// TODO - END
 		
