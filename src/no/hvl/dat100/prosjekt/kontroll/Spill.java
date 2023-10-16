@@ -93,9 +93,6 @@ public class Spill {
 		
 		// TODO - START
 //		Spill s = new Spill();
-		bord = new Bord();
-		nord = new NordSpiller(Spillere.NORD);
-		syd = new SydSpiller(Spillere.SYD);
 		KortUtils.stokk(bord.getBunkeFra());
 		delutKort();
 		bord.vendOversteFraBunke();
