@@ -111,10 +111,15 @@ public class Spill {
 	private void delutKort() {
 
 		// TODO - START
-		while (nord.getAntallKort()!=8 || syd.getAntallKort()!=8) {
+		if(nord.getAntallKort()  ==0 && syd.getAntallKort()==0) {
+		while (nord.getAntallKort()!=ANTALL_KORT_START || syd.getAntallKort()!=ANTALL_KORT_START) {
 			trekkFraBunke(nord);
-			trekkFraBunke(nord);
+			trekkFraBunke(syd);
 
+		}
+		}
+		else {
+			System.out.println("Delut bare på start av spillen");
 		}
 		// TODO - END
 	}
@@ -153,8 +158,9 @@ public class Spill {
 	public Handling nesteHandling(ISpiller spiller) {
 		
 		// TODO - START
-		// Hint: se på hvilke metoder som er tilgjengelig på en spiller
-
+		
+//		return spiller.nesteHandling(null);
+		
 //		return spiller.
 		// TODO - END
 		
