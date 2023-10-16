@@ -165,9 +165,14 @@ public class KortSamling {
 	public boolean har(Kort kort) {
 		boolean harkort = false;
 		int j = 0;
+		if(erTom()) {
+//			throw new IllegalArgumentException("samlingen er tom");
+			return harkort;
+		}
 
 		while (j < antall && !harkort) {
-			if (/*samling[j].equals(kort) &&*/ samling!=null && kort!=null && samling[j].getFarge() == kort.getFarge() && samling[j].getVerdi() == kort.getVerdi() ) {
+			if (/* samling[j].equals(kort) && */ samling != null && kort != null
+					&& samling[j].getFarge() == kort.getFarge() && samling[j].getVerdi() == kort.getVerdi()) {
 				harkort = true;
 			}
 			j++;
@@ -188,7 +193,19 @@ public class KortSamling {
 
 	public boolean fjern(Kort kort) {
 
-		// kan også bruke har()
+//		boolean Fjernet = false;
+//		for (int e = 0; e < MAKS_KORT; e++) {
+//			if (samling[e] != null && kort == samling[e]) {
+//				samling[e] = null;
+//				Fjernet = true;
+//				antall--;
+//				return Fjernet;
+//			}
+//		}
+//		return Fjernet;
+//	}
+
+	// kan også bruke har()
 //		if(har(kort)) {
 
 //		for (Kort k : samling) {
@@ -205,22 +222,58 @@ public class KortSamling {
 //		return false;
 //
 //	}
+		boolean fjern = false;
+		
+//		int teller =0;
+//		
+//		while(teller< antall) {
+//			if(samling[teller] == kort && !fjern) {
+//				int teller2 = teller;
+//				
+//				while(teller2< antall-1) {
+//					samling[teller2]=samling[teller2+1];
+//					teller2++;
+//					teller++;
+//				}
+//				
+//				
+//			}
+//		}
+		
 		for (int i = 0; i < antall; i++) {
+			
 
-			if (samling[i] == kort) {
+			if (samling[i] == kort && !fjern) {
 
-				if (i < antall - 1) {
-					
-					//kanskje det kødder til her med blidet på kort?
-					samling[i] = samling[i + 1];
-				} else {
-					samling[i] = null;
+				samling[i] =null;
+				
+//				if (i < antall - 1) {
+//					
+//					//kanskje det kødder til her med blidet på kort?
+//					samling[i] = samling[i + 1];
+//				} else {
+//					samling[i] = null;
+//				
+//				}
+				while(i<antall-1) {
+					samling[i]=samling[i+1];
+					i++;
 				}
 				antall--;
-				return true;
+				fjern=true;
+				return fjern;
+				
+//				antall--;
+//				fjern = true;
+//				return fjern;
 			}
+
 		}
-		return false;
+//		KortUtils.sorter(this);
+//		if(fjern==true) {
+//			antall--;
+//		}
+		return fjern;
 	}
 
 	// TODO - END
@@ -245,5 +298,6 @@ public class KortSamling {
 		// TODO - END
 
 	}
+	
 
 }

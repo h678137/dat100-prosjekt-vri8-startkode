@@ -96,6 +96,7 @@ public class Spill {
 		KortUtils.stokk(bord.getBunkeFra());
 		delutKort();
 		bord.vendOversteFraBunke();
+		KortUtils.sorter(syd.getHand());
 
 		// TODO - END
 	}

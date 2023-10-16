@@ -10,7 +10,7 @@ public abstract class Regler {
 	public static final int MAKS_KORT_FARGE = 13;
 	public final static int ANTALL_KORT_START = 8;
 	
-	private final static int MAKS_TREKK = 3;
+	private final static int MAKS_TREKK = 1;
 	
 	public static int maksTrekk() {
 		
