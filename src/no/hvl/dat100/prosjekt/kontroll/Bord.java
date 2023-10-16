@@ -181,6 +181,7 @@ public class Bord {
 
 		// legger tilbake øverste kort i den tomme til bunken
 		bunkeTil.leggTil(overst);
+		KortUtils.stokk(bunkeFra);
 
 		// TODO - END
 	}

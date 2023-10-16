@@ -224,11 +224,13 @@ public class Spill {
 		switch(handling.getType()) {
 		
 		case TREKK:
+			if(spiller.getAntallTrekk()<=ANTALL_KORT_START) {
 			trekkFraBunke(spiller);
 			kort=spiller.getHand().seSiste();
+			}
 			break;
 		case FORBI:
-			
+			forbiSpiller(spiller);
 			
 			break;
 		case LEGGNED:
@@ -244,8 +246,6 @@ public class Spill {
 		// om noen andre private metoder i klassen kan brukes
 		// til å implementere denne metoden
 				
-		throw new UnsupportedOperationException(TODO.method());
-
 		// TODO - END
 	}
 
