@@ -30,7 +30,10 @@ public class Spill {
 		
 		// TODO - START
 
-		
+		bord = new Bord();
+		nord = new NordSpiller(Spillere.NORD);
+		syd = new NordSpiller(Spillere.SYD);
+
 		// TODO - END
 		
 	}
@@ -90,10 +93,14 @@ public class Spill {
 	public void start() {
 		
 		// TODO - START
+//		Spill s = new Spill();
 		bord = new Bord();
+		nord = new NordSpiller(Spillere.NORD);
+		syd = new NordSpiller(Spillere.SYD);
 		KortUtils.stokk(bord.getBunkeFra());
-		Spiller n = new Spiller();
-		Spiller s = new Spiller();
+		delutKort();
+		bord.vendOversteFraBunke();
+		
 		// TODO - END
 	}
 
@@ -104,8 +111,11 @@ public class Spill {
 	private void delutKort() {
 
 		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
+		while (nord.getAntallKort()!=8 || syd.getAntallKort()!=8) {
+			trekkFraBunke(nord);
+			trekkFraBunke(nord);
+
+		}
 		// TODO - END
 	}
 
@@ -122,8 +132,12 @@ public class Spill {
 	public Kort trekkFraBunke(ISpiller spiller) {
 
 		// TODO - START
-			
-		throw new UnsupportedOperationException(TODO.method());
+		if(bord.bunkefraTom()) {
+			bord.snuTilBunken();
+		}
+		Kort trekk = bord.taOversteFraBunke();
+		spiller.leggTilKort(trekk);
+		return trekk;
 
 		// TODO - END
 	}
@@ -140,8 +154,8 @@ public class Spill {
 		
 		// TODO - START
 		// Hint: se på hvilke metoder som er tilgjengelig på en spiller
-		throw new UnsupportedOperationException(TODO.method());
 
+//		return spiller.
 		// TODO - END
 		
 	}
@@ -161,9 +175,12 @@ public class Spill {
 	public boolean leggnedKort(ISpiller spiller, Kort kort) {
 		
 		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
-
+		if(spiller.getHand().har(kort)) {
+		spiller.fjernKort(kort);
+		bord.leggNedBunkeTil(kort);
+		return true;
+		}
+		return false;
 		// TODO - END
 	}
 
@@ -177,8 +194,7 @@ public class Spill {
 	public void forbiSpiller(ISpiller spiller) {
 		
 		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
+		spiller.setAntallTrekk(0);
 	
 		// TODO - END
 	}
@@ -199,6 +215,17 @@ public class Spill {
 		// TODO - START
 		Kort kort = null;
 
+		switch(handling.getType()) {
+		case TREKK:
+			
+			break;
+		case FORBI:
+			break;
+		case LEGGNED:
+			break;
+
+			
+		}
 		// Hint: del opp i de tre mulige handlinger og vurder 
 		// om noen andre private metoder i klassen kan brukes
 		// til å implementere denne metoden
