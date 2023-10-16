@@ -174,6 +174,7 @@ public class Spill {
 		if (spiller.getHand().har(kort)) {
 			spiller.fjernKort(kort);
 			bord.leggNedBunkeTil(kort);
+			spiller.setAntallTrekk(0);
 			return true;
 		}
 		return false;
@@ -210,7 +211,7 @@ public class Spill {
 		switch (handling.getType()) {
 
 		case TREKK:
-			if (spiller.getAntallTrekk() <= ANTALL_KORT_START) {
+			if (spiller.getAntallTrekk() < ANTALL_KORT_START) {
 				return trekkFraBunke(spiller);
 			}
 			break;

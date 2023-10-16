@@ -165,24 +165,14 @@ public class KortSamling {
 	public boolean har(Kort kort) {
 		boolean harkort = false;
 		int j = 0;
-//		boolean harkort=false;
-//		for (Kort k : samling) {
-//			if (k == kort) {
-//				return true;
-//			}
-//		}
-//		return false;
+
 		while (j < antall && !harkort) {
 			if (samling[j].equals(kort)) {
 				harkort = true;
 			}
 			j++;
 		}
-//		for(int i =0; i<antall;i++) {
-//			if (samling[i]==kort) {
-//				return true;
-//			}
-//		}
+
 		return harkort;
 
 	}

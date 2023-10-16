@@ -71,8 +71,8 @@ public class SydSpiller extends Spiller {
 		
 		if (spillFra != null) {
 			
-			Random r = new Random();
-			int p = r.nextInt(spillFra.length);
+			Random rand = new Random();
+			int p = rand.nextInt(spillFra.length);
 			spill = spillFra[p];
 			handling = new Handling(HandlingsType.LEGGNED, spill);
 			// setAntallTrekk(0);
