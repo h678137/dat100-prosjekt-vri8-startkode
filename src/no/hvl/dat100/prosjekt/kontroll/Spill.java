@@ -29,7 +29,7 @@ public class Spill {
 	public Spill() {
 		
 		// TODO - START
-		nord = new ISpiller();
+
 		
 		// TODO - END
 		
@@ -44,8 +44,8 @@ public class Spill {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
-
+		return bord;
+		
 		// TODO - END
 		
 	}
@@ -59,8 +59,7 @@ public class Spill {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
-
+		return syd;
 		// TODO - END
 		
 	}
@@ -74,8 +73,8 @@ public class Spill {
 		
 		// TODO - START
 
-		throw new UnsupportedOperationException(TODO.method());
-
+		return nord;
+		
 		// TODO - END
 	}
 
@@ -91,8 +90,10 @@ public class Spill {
 	public void start() {
 		
 		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
+		bord = new Bord();
+		KortUtils.stokk(bord.getBunkeFra());
+		Spiller n = new Spiller();
+		Spiller s = new Spiller();
 		// TODO - END
 	}
 

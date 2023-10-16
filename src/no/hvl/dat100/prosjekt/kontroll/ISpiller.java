@@ -18,7 +18,7 @@ public interface ISpiller {
 	 * 
 	 * @return antall kort spilleren har på hånd.
 	 */
-	
+
 	public int getAntallKort();
 
 	/**

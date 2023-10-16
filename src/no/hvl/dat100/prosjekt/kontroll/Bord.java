@@ -162,26 +162,25 @@ public class Bord {
 	 * Deretter legges alle den andre kortene i til-bunken over i fra-bunken. Denne
 	 * stokkes og kortet som man har tatt vare pÂ legges tilbake i til-bunken. Det
 	 * vil nå være det eneste kortet i til-bunken.
-	 */	
+	 */
 	public void snuTilBunken() {
-		
-		if(bunkeTil.getAntalKort()<=1) {
+
+		if (bunkeTil.getAntalKort() <= 1) {
 			throw new IllegalArgumentException(" du kan ikke gjøre om bunken");
 		}
-		//ta vare på øverste til kort og fjerner fra bunketiil
+		// ta vare på øverste til kort og fjerner fra bunketiil
 		Kort overst = bunkeTil.taSiste();
-		
-				
-		//må stokke kortet  til -> fra
-		while(bunkeTil.getAntalKort()!=0) {
+
+		// må stokke kortet til -> fra
+		while (bunkeTil.getAntalKort() != 0) {
 			bunkeFra.leggTil(bunkeTil.taSiste());
-		}
-		
-		
-		//legger tilbake øverste kort i den tomme til bunken
+
+			
+			
+ 		}
+
+		// legger tilbake øverste kort i den tomme til bunken
 		bunkeTil.leggTil(overst);
-		
-	
 
 		// TODO - END
 	}
@@ -195,7 +194,7 @@ public class Bord {
 	public void leggNedBunkeTil(Kort k) {
 
 		// TODO - START
-		//skal det leges på en spesiell måte?
+		// skal det leges på en spesiell måte?
 		bunkeTil.leggTil(k);
 		// TODO - END
 
