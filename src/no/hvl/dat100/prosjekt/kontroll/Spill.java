@@ -32,7 +32,7 @@ public class Spill {
 
 		bord = new Bord();
 		nord = new NordSpiller(Spillere.NORD);
-		syd = new NordSpiller(Spillere.SYD);
+		syd = new SydSpiller(Spillere.SYD);
 
 		// TODO - END
 		
@@ -96,7 +96,7 @@ public class Spill {
 //		Spill s = new Spill();
 		bord = new Bord();
 		nord = new NordSpiller(Spillere.NORD);
-		syd = new NordSpiller(Spillere.SYD);
+		syd = new SydSpiller(Spillere.SYD);
 		KortUtils.stokk(bord.getBunkeFra());
 		delutKort();
 		bord.vendOversteFraBunke();
@@ -222,16 +222,24 @@ public class Spill {
 		Kort kort = null;
 
 		switch(handling.getType()) {
+		
 		case TREKK:
-			
+			trekkFraBunke(spiller);
+			kort=spiller.getHand().seSiste();
 			break;
 		case FORBI:
+			
+			
 			break;
 		case LEGGNED:
+			leggnedKort(spiller, kort);
+			
 			break;
+			
 
 			
 		}
+		return kort;
 		// Hint: del opp i de tre mulige handlinger og vurder 
 		// om noen andre private metoder i klassen kan brukes
 		// til å implementere denne metoden
