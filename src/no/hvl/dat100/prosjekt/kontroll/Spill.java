@@ -33,7 +33,6 @@ public class Spill {
 		bord = new Bord();
 		nord = new NordSpiller(Spillere.NORD);
 		syd = new SydSpiller(Spillere.SYD);
-
 		// TODO - END
 		
 	}
@@ -199,7 +198,6 @@ public class Spill {
 		
 		// TODO - START
 		spiller.setAntallTrekk(0);
-	
 		// TODO - END
 	}
 
@@ -229,11 +227,12 @@ public class Spill {
 			break;
 		case FORBI:
 			forbiSpiller(spiller);
-			
+//			Tur.skiftSpiller();
 			break;
 		case LEGGNED:
+//			if(Regler.kanLeggeNed(, kort) ||atter(kort)){
 			leggnedKort(spiller, kort);
-			
+//		}
 			break;
 			
 

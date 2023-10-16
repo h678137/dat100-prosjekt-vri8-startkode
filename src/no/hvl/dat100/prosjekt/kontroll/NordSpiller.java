@@ -18,6 +18,7 @@ public class NordSpiller extends Spiller {
 
 	public NordSpiller(Spillere spiller) {
 		super(spiller);
+		
 	}
 
 	@Override
