@@ -81,8 +81,8 @@ public class KortSamling {
 //		if (har(kort)) {
 //			System.out.println("Samlingen har kortet allerede!");
 //		} else {
-			samling[antall] = kort;
-			antall++;
+			samling[antall++] = kort;
+//			antall++; sparer en linje
 
 		}
 //		else {

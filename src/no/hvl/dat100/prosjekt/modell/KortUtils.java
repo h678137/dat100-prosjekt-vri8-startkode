@@ -22,11 +22,12 @@ public class KortUtils {
 //		KortSamling sotert = new KortSamling();
 
 		for (int i = 0; i < hentant; i++) {
-			if (samling.getSamling()[i].compareTo(samling.getSamling()[i + 1]) > 0 /* &&j<hentant-1 */) {
+			for(int j=i; j<hentant; j++) {
+			if (samling.getSamling()[i].compareTo(samling.getSamling()[j+1]) > 0 /* &&j<hentant-1 */) {
 				Kort temp = samling.getSamling()[i];
-				samling.getSamling()[i] = samling.getSamling()[i + 1];
-				samling.getSamling()[i + 1] = temp;
-
+				samling.getSamling()[i] = samling.getSamling()[j+1];
+				samling.getSamling()[j+1] = temp;
+			}
 //				sotert.leggTil(hentsamling[minstpos]);
 //				System.out.println(hentsamling[minstpos].toString());
 
